@@ -19,4 +19,8 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\ExameDesenvolvedorDeTestes\api\MinhasFinancas.Domain\MinhasFinancas.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -19,45 +19,44 @@ Seguindo as regras do desafio:
 # Estrutura do Projeto
 
 ```text
-backend-tests/
-frontend-tests/
-e2e-tests/
+backend_testes/
+e2e-testes/
 docs/bugs/
 ```
 
-- `backend-tests/`
-  Testes backend com xUnit.
+- `backend_testes/`
+  Testes backend utilizando xUnit.
 
-- `frontend-tests/`
-  Testes frontend com Vitest.
-
-- `e2e-tests/`
-  Testes end-to-end com Playwright.
+- `e2e-testes/`
+  Testes end-to-end utilizando Playwright.
 
 - `docs/bugs/`
-  Documentação dos bugs encontrados.
+  Documentação dos bugs encontrados durante os testes e inspeções manuais.
 
 ---
 
 # Estratégia de Testes
 
 ## Testes Unitários
+
 Focados nas regras de negócio:
-- menor de idade não pode ter receita
+- menor de idade
 - validação de categorias
-- cálculo de totais
+- permissões de tipos de transação
 
 ## Testes de Integração
-Focados na comunicação entre:
-- API
-- serviços
-- banco de dados
+
+Focados na integração entre:
+- Entity Framework Core
+- persistência
+- banco em memória
 
 ## Testes End-to-End
+
 Focados nos principais fluxos:
-- cadastro de pessoas
-- cadastro de categorias
-- cadastro de transações
+- carregamento da aplicação
+- navegação inicial
+- validação da interface
 
 ---
 
@@ -79,12 +78,6 @@ docs/bugs/
 dotnet test
 ```
 
-## Frontend
-
-```bash
-npm run test
-```
-
 ## E2E
 
 ```bash
@@ -93,6 +86,18 @@ npx playwright test
 
 ---
 
+# Status Atual
+
+- Testes unitários implementados e executando com sucesso
+- Testes de integração parcialmente bloqueados devido a incompatibilidade do EF Core no ambiente atual
+- Testes end-to-end implementados utilizando Playwright
+
+---
+
 # Justificativa
 
-Os testes foram criados com foco nas principais regras de negócio informadas no desafio.
+Os testes foram criados com foco nas principais regras de negócio informadas no desafio, priorizando:
+- regras críticas
+- organização da pirâmide de testes
+- validação do comportamento da aplicação
+- documentação dos problemas encontrados
